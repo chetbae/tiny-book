@@ -5,26 +5,7 @@ from bs4 import BeautifulSoup
 from fpdf import FPDF
 from pdf2image import convert_from_path
 from PIL import Image
-
-class Book():
-    def __init__(self):
-        self.title: str
-        self.author: str
-        self.chapters = []
-    
-    def read(self):
-        print('======START======')
-        print(self.title)
-        print(self.author)
-        for item in self.chapters:
-            print(item.heading)
-            print(item.content)
-        print('======FIN======')
-
-class Chapter():
-    def __init__(self, heading, content):
-        self.heading = heading
-        self.content = content
+import Book
 
 def epub_to_obj(file_path):
     obj = Book()
@@ -34,7 +15,7 @@ def epub_to_obj(file_path):
     for item in book.get_items_of_type(ebooklib.ITEM_DOCUMENT):
         html = item.get_content()
         heading, content = parse_epub_chapter(html)
-        ch = Chapter(heading, content)
+        ch = Book.Chapter(heading, content)
         obj.chapters.append(ch) 
     
     return obj
@@ -99,7 +80,7 @@ def html_to_obj(path='product.html'):
         p = item.find('p')
         heading = h2.string
         content = p.string
-        obj.chapters.append(Chapter(heading, content))
+        obj.chapters.append(Book.Chapter(heading, content))
     
     return obj
 
@@ -124,7 +105,6 @@ class TINY_BOOK(FPDF):
         self.set_text_color(grey)
         self.multi_cell(0, h=8, txt=author.upper(), align='L')
         self.set_text_color(black)
-
 
     # def header(self):
     #     pass
