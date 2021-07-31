@@ -33,4 +33,4 @@ From any ebook .epub file, this python script is capable of converting it into a
 <img src="https://user-images.githubusercontent.com/48145854/126224929-58d29e71-8e82-4818-bf59-82ad15b4f0cb.jpg" alt="cafe" width="600"/>
 
 ### 🤓🥂
-
+Uses Python and various libraries on the scraping/formatting side.
