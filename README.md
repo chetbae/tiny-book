@@ -5,7 +5,7 @@
 ## Why
 Since setting a goal of reading 21 books for 2021, I've been wanting to get more reading hours under my belt. With this urge, I've noticed how easily my time gets directed into entertainment of a more frivolous nature, eg. social media, *tiktok*... and so I tried my hand at engineering better habits by making it obvious, making it attractive, making it easy, and making it satisfying (from rules laid out in Atomic Habits). This project targets rule 1: make it obvious.
 
-This partly arose from wanting a paperback of reading classics off of iBooks on my phone already and [Mouse Book Club](www.mousebookclub.com), who makes these on a commercial scale <sub>and I can't afford because shipping to Canada costs double the book 😞 ).</sub>
+This partly arose from wanting a paperback of the ebooks I read on my phone. Turns out [Mouse Book Club](www.mousebookclub.com) who happens to make these on a commercial scale <sub> (but I can't afford because shipping to Canada costs double the book 😞 ).</sub>
 
 ## What
 From any ebook .epub file, this python script is capable of converting it into a booklet the size of your iPhone (which surprisingly I have not found any similar services on the internet). Thus, when given a choice between taking out your phone while waiting for coffee, taking the bus, or even just downtime at home, the barrier to reading is reduced. 
