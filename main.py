@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from fpdf import FPDF
 from pdf2image import convert_from_path
 from PIL import Image
-import Book
+from Book import *
 
 def epub_to_obj(file_path):
     obj = Book()
