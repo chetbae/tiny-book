@@ -15,10 +15,23 @@ def epub_to_obj(file_path):
     for item in book.get_items_of_type(ebooklib.ITEM_DOCUMENT):
         html = item.get_content()
         heading, content = parse_epub_chapter(html)
+        
+        if not is_valid_chapter(heading,content): #fixes blank chapter bug
+            break
+            
         ch = Book.Chapter(heading, content)
         obj.chapters.append(ch) 
     
     return obj
+
+def is_valid_chapter(heading, content):
+    """
+    :param heading, content:
+    :return boolean:
+
+    validity is defined as non-empty
+    """
+    return not (heading == '' or content == '\n \n back \n \n ')
     
 def parse_epub_chapter(raw_ch):
     blacklist = ['[document]','noscript','header','html','meta','head','input','script', 'h2']
